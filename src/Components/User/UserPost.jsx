@@ -1,45 +1,61 @@
 import React from 'react';
+import styles from './UserPost.module.css'
 import useForm from '../../Hooks/useForm';
-import { UserContext } from '../../UserContext';
 import useFetch from '../../Hooks/useFetch';
-import { USER_POST } from '../../Api';
+import { PHOTO_POST } from '../../Api';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
 import Error from '../Helper/Error';
+import { useNavigate } from 'react-router-dom';
 
 const UserPost = () => {
-    const username = useForm();
-    const email = useForm('email');
-    const password = useForm('password');
+    const titulo = useForm();
+    const autor = useForm();
+    const editora = useForm();
+    const numPag = useForm('number');
+    const [img, setImg] = React.useState({});
+    const {data, error, loading, request} = useFetch();
+    const navigate = useNavigate();
 
-    const {userLogin} = React.useContext(UserContext);
-    const {loading, error, request} = useFetch();
+    React.useEffect(() => {
+      if(data) navigate('/conta');
+    }, [data, navigate])
 
-    async function handleSubmit(event) {
-        event.preventDefault();
-        const {url, options} = USER_POST({
-          username: username.value,
-          email: email.value,
-          password: password.value,
-        });
-        const {response} = await request(url, options);
-        if(response.ok) userLogin(username.value, password.value);
-      }
+    function handleSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData();
+      formData.append('img', img.raw);
+      formData.append('titulo', titulo.value);
+      formData.append('autor', autor.value);
+      formData.append('editora', editora.value);
+      formData.append('pagnum', numPag.value);
 
-    return (
-        <section className='animeLeft'>
-            <form onSubmit={handleSubmit}>
-                <Input label='Título' type='text' name='title' />
-                <Input label='Autor' type='text' name='author' />
-                <Input label='Editora' type='text' name='publisher' />
-                <Input label='Número de páginas' type='number' name='pagnumber' />
-                <Input label='País do autor' type='text' name='country-author' />
-                
-                {loading ? <Button disabled>Postando...</Button> : <Button>Postar</Button>}
-                <Error error={error}/>
-            </form>
-            </section>
-    )
+      const token = window.localStorage.getItem('token');
+      const {url, options} = PHOTO_POST(formData, token);
+      request(url, options);
+    }
+
+    function handleImgChange({target}) {
+      setImg({
+        preview: URL.createObjectURL(target.files[0]),
+        raw: target.files[0],
+      });
+    }
+
+    return <section className={`${styles.userPost} animeLeft`}>
+      <form onSubmit={handleSubmit}>
+        <Input label='Título' type='text' name='titulo' {...titulo}/>
+        <Input label='Autor' type='text' name='autor' {...autor}/>
+        <Input label='Editora' type='text' name='editora' {...editora}/>
+        <Input label='Número de páginas' type='number' name='pagnum' {...numPag}/>
+        <input className={styles.file} type="file" name='img' id='img' onChange={handleImgChange}/>
+        {loading ? <Button disabled>Postando...</Button> : <Button>Postar</Button>}
+        <Error error={error}/>
+      </form>
+      <div>
+        {img.preview && <div className={styles.preview} style={{backgroundImage: `url('${img.preview}')`}}></div>}
+      </div>
+    </section>
 }
 
 export default UserPost;
