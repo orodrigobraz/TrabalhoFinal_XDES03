@@ -48,6 +48,7 @@ const UserPost = () => {
         <Input label='Autor' type='text' name='autor' {...autor}/>
         <Input label='Editora' type='text' name='editora' {...editora}/>
         <Input label='Número de páginas' type='number' name='pagnum' {...numPag}/>
+        <label>Imagem de capa</label>
         <input className={styles.file} type="file" name='img' id='img' onChange={handleImgChange}/>
         {loading ? <Button disabled>Postando...</Button> : <Button>Postar</Button>}
         <Error error={error}/>

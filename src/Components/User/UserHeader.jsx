@@ -17,7 +17,7 @@ const UserHeader = () => {
                 setTitle('Estatísticas');
                 break;
             case '/conta':
-                setTitle('Minha conta');
+                setTitle('Meus livros');
         }
 
     }, [location]);
