@@ -108,3 +108,16 @@ export function CONTENT_DELETE(id) {
         },
     };
 }
+
+export function PASSWORD_LOST(body) {
+    return {
+        url: API_URL + '/api/password/lost',
+        options: {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body),
+        }
+    }
+}
