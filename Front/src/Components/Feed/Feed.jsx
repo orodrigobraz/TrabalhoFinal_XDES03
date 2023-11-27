@@ -3,12 +3,12 @@ import FeedModal from './FeedModal';
 import FeedFotos from './FeedFotos';
 
 
-const Feed = () => {
+const Feed = ({user}) => {
     const [modal, setModal] = React.useState(null);
 
     return <div>
-        {modal && <FeedModal foto={modal} />}
-        <FeedFotos setModal={setModal} />
+        {modal && <FeedModal foto={modal} setModal={setModal} />}
+        <FeedFotos user={user} setModal={setModal} />
     </div>
 }
 

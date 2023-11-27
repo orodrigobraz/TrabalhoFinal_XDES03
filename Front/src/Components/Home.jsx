@@ -1,10 +1,9 @@
 import React from 'react';
-import Feed from './Feed/Feed';
-
+import User from './User/User';
 
 const Home = () => {
   return <section className='container mainContainer'>
-    <Feed />
+    <User />
   </section>
 }
 
