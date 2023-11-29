@@ -7,6 +7,7 @@ import Input from '../Forms/Input';
 import Button from '../Forms/Button';
 import Error from '../Helper/Error';
 import { useNavigate } from 'react-router-dom';
+import Head from '../Helper/Head';
 
 const UserPost = () => {
     const titulo = useForm();
@@ -43,6 +44,7 @@ const UserPost = () => {
     }
 
     return <section className={`${styles.userPost} animeLeft`}>
+      <Head title='Poste seu livro' />
       <form onSubmit={handleSubmit}>
         <Input label='Título' type='text' name='titulo' {...titulo}/>
         <Input label='Autor' type='text' name='autor' {...autor}/>
