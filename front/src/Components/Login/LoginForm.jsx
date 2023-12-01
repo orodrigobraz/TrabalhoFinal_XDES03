@@ -30,9 +30,10 @@ const LoginForm = () => {
   
       if (response.ok) {
         const result = await response.json();
-        window.localStorage.setItem('token', result.token);
+        window.localStorage.setItem('token', result.token); // Armazene o token no localStorage
+        window.localStorage.setItem('userId', result.userId); // Armazene o userId no localStorage
         userLogin(username.value, password.value);
-
+  
       } else {
         console.log('Credenciais inválidas!!');
       }

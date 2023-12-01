@@ -31,8 +31,8 @@ app.post('/login', async (req,res) => {
             if(senhaValidada){ 
                 
                 const token = jwt.sign({ userId: user.id, usuario: user.usuario }, process.env.TOKEN);
-                
-                return res.json({ "token" : token});
+
+                return res.json({ "token" : token,  "userId" : user.id});
             }
             
             else
@@ -84,34 +84,42 @@ app.post('/criar', async (req,res) => {
 });
 
 app.post('/postar', upload.none(), async (req,res) => {
-    console.log("Corpo da solicitação: ", req.body);
-    const {titulo, autor, editora, pagnum, img} = req.body; 
-    const jsonPath = path.join(__dirname, '.', 'db', 'livros.json');
-    const livrosCadastrados = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
 
-    const livroExistente = livrosCadastrados.find(livro => livro.titulo === titulo);
-    
+    if (token == null) return res.sendStatus(401); 
 
-    if (!titulo || !autor || !editora || !pagnum || !img) {
-        console.log("ERRO 1");
+    jwt.verify(token, process.env.TOKEN, (err, user) => {
+        if (err) return res.sendStatus(403); 
 
-        return res.status(409).send(`Você deve preencher todos os campos..`);
-    }
+        req.user = user;
 
+        console.log("Corpo da solicitação: ", req.body);
 
-    if (livroExistente) {
-        console.log("ERRO 2");
+        const {titulo, autor, editora, pagnum, img} = req.body;
+        const userId = req.user.userId; 
+        const jsonPath = path.join(__dirname, '.', 'db', 'livros.json');
+        const livrosCadastrados = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));
 
-        return res.status(409).send(`Livro ${titulo} já foi cadastrado.`);
+        const livroExistente = livrosCadastrados.find(livro => livro.titulo === titulo && livro.userId === userId); 
+        if (!titulo || !autor || !editora || !pagnum || !img || !userId) {
+            console.log("ERRO 1");
+
+            return res.status(409).send(`Você deve preencher todos os campos..`);
         }
 
-    const id = livrosCadastrados.length + 1;
-    const imgBase64 = Buffer.from(img).toString('base64');
-    const livro = new Livro(id, titulo, autor, editora, pagnum, imgBase64);
+        if (livroExistente) {
+            console.log("ERRO 2");
 
-    livrosCadastrados.push(livro);
-    fs.writeFileSync(jsonPath,JSON.stringify(livrosCadastrados,null,2));
-    res.send(`Tudo certo, livro cadastrado com sucesso!!`);
+            return res.status(409).send(`Livro ${titulo} já foi cadastrado.`);
+        }
+
+        const id = livrosCadastrados.length + 1;
+        const livro = new Livro(id, titulo, autor, editora, pagnum, img, userId); 
+
+        livrosCadastrados.push(livro);
+        fs.writeFileSync(jsonPath,JSON.stringify(livrosCadastrados,null,2));
+        res.send(`Tudo certo, livro cadastrado com sucesso!!`);
+    });
 });
-
 

@@ -31,9 +31,13 @@ const UserPost = () => {
       formData.append('editora', editora.value);
       formData.append('pagnum', pagnum.value);
       formData.append('img', img.value);
-      
+      const token = localStorage.getItem('token'); // Recupere o token do localStorage
+
       const response = await fetch('http://localhost:3000/postar', {
         method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`, // Adicione o token aqui
+        },
         body: formData,
       });
 
@@ -46,8 +50,6 @@ const UserPost = () => {
       }
 
     }
-
-   
 
     return <section className={`${styles.userPost} animeLeft`}>
       <form onSubmit={handleSubmit}>

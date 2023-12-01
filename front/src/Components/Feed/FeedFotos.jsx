@@ -5,20 +5,21 @@ import Loading from '../Helper/Loading';
 import styles from './FeedFotos.module.css';
 import livros from 'C:/Users/Unifei/Documents/Trabalho-Final-ProgramacaoWeb-main/back/db/livros.json'
 
-const FeedFotos = ({setModal}) => {
+const FeedFotos = ({setModal, userId}) => { 
     const [data, setData] = React.useState(null);
     const [loading, setLoading] = React.useState(false);
     const [error, setError] = React.useState(null);
 
     React.useEffect(() => {
         try {
-            setData(livros);
+            const livrosDoUsuario = livros.filter(livro => livro.userId === userId); 
+            setData(livrosDoUsuario);
         } catch (error) {
             setError('Erro ao buscar os livros');
         } finally {
             setLoading(false);
         }
-    }, []);
+    }, [userId]); 
 
     if(error) return <Error error={error} />;
     if(loading) return <Loading />;
