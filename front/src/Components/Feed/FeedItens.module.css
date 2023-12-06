@@ -5,9 +5,8 @@
     cursor: pointer;
 }
 
-.foto img {
-    grid-area:1/1;
-    border: 2px solid black;
+.foto > div {
+    grid-area: 1/1;
 }
 
 .foto span {

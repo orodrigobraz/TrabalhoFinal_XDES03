@@ -6,32 +6,13 @@ const types = {
         message: 'Preencha um e-mail válido.',
     },
     password: {
-        regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{4,}$/,
-        message: 'A senha precisa ter 1 caracter maiúsculo, 1 minúsculo e 1 número. Com no mínimo 4 caracteres',
+        regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
+        message: 'A senha precisa ter 1 caracter maiúsculo, 1 minúsculo e 1 número. Com no mínimo 8 caracteres'
     },
     number: {
         regex: /^\d+$/,
         message: 'Utilize apenas números.'
-    },
-
-    confirmPassword: {
-        validate: (password, confirmPassword) => {
-            if (password === confirmPassword) {
-                return {
-                    isValid: true,
-                    message: 'As senhas coincidem.'
-                };
-            } else {
-                return {
-                    isValid: false,
-                    message: 'As senhas não coincidem.'
-                };
-            }
-        }
     }
-
-  
-
 };
 
 const useForm = (type) => {
@@ -63,7 +44,7 @@ const useForm = (type) => {
         onChange, 
         error, 
         validate: () => validate(value),
-        onBlur: () => validate(value),
+        onBlur: () => validate(value)
     };
 };
 

@@ -1,12 +1,12 @@
 import React from 'react';
-import Login from './Login/Login';
-import Feed from './Feed/Feed';
-
+import User from './User/User';
+import Head from './Helper/Head';
 
 const Home = () => {
-  
-  return <Feed />
- 
+  return <section className='container mainContainer'>
+    <Head title='Livros' description='Página inicial' />
+    <User />
+  </section>
 }
 
 export default Home;

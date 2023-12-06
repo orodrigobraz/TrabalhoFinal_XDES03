@@ -1,58 +1,37 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
 import useForm from '../../Hooks/useForm';
-import { UserContext } from '../../UserContext';
+import useFetch from '../../Hooks/useFetch';
+import { PASSWORD_LOST } from '../../Api';
 import Error from '../Helper/Error';
-import styles from './LoginForm.module.css'
-import stylesBtn from '../Forms/Button.module.css'
+import Head from '../Helper/Head';
 
-const LoginForm = () => {
-  const username = useForm();
-  const password = useForm();
-  const { userLogin, error, loading } = React.useContext(UserContext);
+const LoginPasswordLost = () => {
+    const login = useForm();
+    const {data, loading, error, request} = useFetch();
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-  
-    if(username.validate() && password.validate()) {
-      const response = await fetch('http://localhost:3000/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          usuario: username.value,
-          senha: password.value,
-        }),
-      });
-  
-      if (response.ok) {
-        const result = await response.json();
-        window.localStorage.setItem('token', result.token); 
-        window.localStorage.setItem('userId', result.userId); 
-        userLogin(username.value, password.value);
-  
-      } else {
-        console.log('Credenciais inválidas!!');
+    async function handleSubmit(event) {
+      event.preventDefault();
+      if(login.validate()) {
+        const {url, options} = PASSWORD_LOST({login: login.value, url: window.location.href.replace('perdeu', 'resetar'),});
+        await request(url, options);
+        }
       }
-      
-    }
-  }
- 
-  return (
-    <section className='animeLeft'>
-        <h1 className='title'>Mudar senha</h1>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <Input label='Usuário' type='text' name='username' {...username} />
-          <Input label='Senha' type='password' name='password' {...password} />
-          {loading ? <Button disabled>Carregando...</Button> : <Button>Entrar</Button>}
-          <Error error={error} />
+
+    return <section className='animeLeft'>
+      <Head title='Recuperar senha' />
+      <h1 className='title'>Perdeu a senha?</h1>
+      {data ? 
+        <p style={{color: '#4c1'}}>{data}</p>
+      : 
+        <form onSubmit={handleSubmit}>
+          <Input label='Email / Usuário' type='text' name='login' {...login} />
+          {loading ? <Button disabled>Enviando...</Button> : <Button>Enviar Email</Button>}
         </form>
-      
+      }
+      <Error error={error} />
     </section>
-  )
 }
 
-export default LoginForm
+export default LoginPasswordLost;

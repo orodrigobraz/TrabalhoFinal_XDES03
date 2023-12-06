@@ -47,7 +47,7 @@ a {
 }
 
 .mainContainer {
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 
 .title {
@@ -83,4 +83,14 @@ a {
         opacity: 1;
         transform: initial;
     }
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(76.5vh + 10rem);
+}
+
+.AppBody {
+    flex: 1;
 }

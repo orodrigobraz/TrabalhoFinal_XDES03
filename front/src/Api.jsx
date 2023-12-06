@@ -82,3 +82,55 @@ export function PHOTO_GET(id) {
         },
     };
 }
+
+export function COMMENT_POST(id, body) {
+    return {
+        url: `${API_URL}/api/comment/${id}`,
+        options: {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + window.localStorage.getItem('token'),
+            },
+            body: JSON.stringify(body),
+        },
+    };
+}
+
+export function CONTENT_DELETE(id) {
+    return {
+        url: `${API_URL}/api/photo/${id}`,
+        options: {
+            method: 'DELETE',
+            headers: {
+                Authorization: 'Bearer ' + window.localStorage.getItem('token'),
+            },
+        },
+    };
+}
+
+export function PASSWORD_LOST(body) {
+    return {
+        url: API_URL + '/api/password/lost',
+        options: {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body),
+        }
+    }
+}
+
+export function PASSWORD_RESET(body) {
+    return {
+        url: API_URL + '/api/password/reset',
+        options: {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body),
+        }
+    }
+}
