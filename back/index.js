@@ -7,17 +7,18 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const multer = require('multer');
+const User = require('./model/User');
+const Livro = require('./model/Livro');
+
 const upload = multer();
 app.use(express.json());
 app.use(cors());
+
+
 app.listen(3000, () =>{
 
     console.log("Servidor ouvindo na porta 3000!!!");
 });
-
-const User = require('./model/User');
-const Livro = require('./model/Livro');
-
 
 app.post('/login', async (req,res) => {
 
@@ -94,7 +95,6 @@ app.post('/postar', upload.none(), async (req,res) => {
 
         req.user = user;
 
-        console.log("Corpo da solicitação: ", req.body);
 
         const {titulo, autor, editora, pagnum, img} = req.body;
         const userId = req.user.userId; 
@@ -103,13 +103,11 @@ app.post('/postar', upload.none(), async (req,res) => {
 
         const livroExistente = livrosCadastrados.find(livro => livro.titulo === titulo && livro.userId === userId); 
         if (!titulo || !autor || !editora || !pagnum || !img || !userId) {
-            console.log("ERRO 1");
 
             return res.status(409).send(`Você deve preencher todos os campos..`);
         }
 
         if (livroExistente) {
-            console.log("ERRO 2");
 
             return res.status(409).send(`Livro ${titulo} já foi cadastrado.`);
         }

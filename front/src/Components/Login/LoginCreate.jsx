@@ -14,7 +14,7 @@ const LoginCreate = () => {
   const passwordConf = useForm('passwordConf');
 
   const {userLogin} = React.useContext(UserContext);
-  const {loading, error, request} = useFetch();
+  const {loading, error} = useFetch();
 
 
   async function handleSubmit(event) {

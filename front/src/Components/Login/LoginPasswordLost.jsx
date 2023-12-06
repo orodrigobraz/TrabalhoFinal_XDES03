@@ -1,9 +1,58 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Input from '../Forms/Input';
+import Button from '../Forms/Button';
+import useForm from '../../Hooks/useForm';
+import { UserContext } from '../../UserContext';
+import Error from '../Helper/Error';
+import styles from './LoginForm.module.css'
+import stylesBtn from '../Forms/Button.module.css'
 
-const LoginPasswordLost = () => {
+const LoginForm = () => {
+  const username = useForm();
+  const password = useForm();
+  const { userLogin, error, loading } = React.useContext(UserContext);
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+  
+    if(username.validate() && password.validate()) {
+      const response = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          usuario: username.value,
+          senha: password.value,
+        }),
+      });
+  
+      if (response.ok) {
+        const result = await response.json();
+        window.localStorage.setItem('token', result.token); 
+        window.localStorage.setItem('userId', result.userId); 
+        userLogin(username.value, password.value);
+  
+      } else {
+        console.log('Credenciais inválidas!!');
+      }
+      
+    }
+  }
+ 
   return (
-    <div>LoginPasswordLost</div>
+    <section className='animeLeft'>
+        <h1 className='title'>Mudar senha</h1>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <Input label='Usuário' type='text' name='username' {...username} />
+          <Input label='Senha' type='password' name='password' {...password} />
+          {loading ? <Button disabled>Carregando...</Button> : <Button>Entrar</Button>}
+          <Error error={error} />
+        </form>
+      
+    </section>
   )
 }
 
-export default LoginPasswordLost
+export default LoginForm

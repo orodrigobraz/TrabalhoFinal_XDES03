@@ -30,8 +30,8 @@ const LoginForm = () => {
   
       if (response.ok) {
         const result = await response.json();
-        window.localStorage.setItem('token', result.token); // Armazene o token no localStorage
-        window.localStorage.setItem('userId', result.userId); // Armazene o userId no localStorage
+        window.localStorage.setItem('token', result.token); 
+        window.localStorage.setItem('userId', result.userId); 
         userLogin(username.value, password.value);
   
       } else {
@@ -40,8 +40,6 @@ const LoginForm = () => {
       
     }
   }
-
-
  
   return (
     <section className='animeLeft'>
