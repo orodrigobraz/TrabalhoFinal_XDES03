@@ -6,11 +6,9 @@ const cors = require('cors');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const multer = require('multer');
 const User = require('./model/User');
 const Livro = require('./model/Livro');
 
-const upload = multer();
 app.use(express.json());
 app.use(cors());
 
@@ -84,7 +82,7 @@ app.post('/criar', async (req,res) => {
     res.send(`Tudo certo usuario criado com sucesso.`);
 });
 
-app.post('/postar', upload.none(), async (req,res) => {
+app.post('/postar',  async (req,res) => {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
 
