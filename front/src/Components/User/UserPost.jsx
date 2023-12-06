@@ -32,6 +32,7 @@ const UserPost = () => {
       formData.append('pagnum', pagnum.value);
       formData.append('img', img.value);
       const token = localStorage.getItem('token'); 
+
       const response = await fetch('http://localhost:3000/postar', {
         method: 'POST',
         headers: {
