@@ -1,0 +1,804 @@
+{
+    "livros": [
+      {
+        "id": 1,
+        "titulo": "Entendendo Algoritmos",
+        "autor": "Aditya Y. Bhargava",
+        "editora": "Novatec",
+        "pagnum": 264,
+        "img": "https://i.imgur.com/hKHkGdQ.jpg"
+      },
+      {
+        "id": 2,
+        "titulo": "Crime e castigo",
+        "autor": "Fiódor Dostoiévski",
+        "editora": "34",
+        "pagnum": 592,
+        "img": "https://i.imgur.com/u0vRYwR.jpg"
+      },
+      {
+        "id": 3,
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "editora": "Companhia das Letras",
+        "pagnum": 416,
+        "img": "https://i.imgur.com/SISCUuy.jpg"
+      },
+      {
+        "id": 4,
+        "titulo": "Maus",
+        "autor": "Art Spiegelman",
+        "editora": "Companhia das Letras",
+        "pagnum": 196,
+        "img": "https://i.imgur.com/93XMq18.jpg"
+      },
+      {
+        "id": 5,
+        "titulo": "Livro do desassossego",
+        "autor": "Fernando Pessoa",
+        "editora": "Companhia das Letras",
+        "pagnum": 544,
+        "img": "https://i.imgur.com/sthsLVg.jpg"
+      },
+      {
+        "id": 6,
+        "titulo": "A consciência de Zeno",
+        "autor": "Italo Svevo",
+        "editora": "L&PM",
+        "pagnum": 448,
+        "img": "https://i.imgur.com/PQTzgRQ.jpg"
+      },
+      {
+        "id": 7,
+        "titulo": "Sobre os ossos dos mortos",
+        "autor": "Olga Tokarczuk",
+        "editora": "Todavia",
+        "pagnum": 256,
+        "img": "https://i.imgur.com/uFkggtL.jpg"
+      },
+      {
+        "id": 8,
+        "titulo": "Viagem ao Volga",
+        "autor": "Aḥmad Ibn Faḍlān",
+        "editora": "Carambaia",
+        "pagnum": 168,
+        "img": "https://i.imgur.com/P2BFLvT.jpg"
+      },
+      {
+        "id": 9,
+        "titulo": "Um Exu em Nova York",
+        "autor": "Cidinha da Silva",
+        "editora": "Pallas",
+        "pagnum": 80,
+        "img": "https://i.imgur.com/B3k7jiX.jpg"
+      },
+      {
+        "id": 10,
+        "titulo": "O Hobbit",
+        "autor": "J.R.R. Tolkien",
+        "editora": "Harper Collins",
+        "pagnum": 336,
+        "img": "https://i.imgur.com/iV8N7ns.jpg"
+      },
+      {
+        "id": 11,
+        "titulo": "Moby Dick",
+        "autor": "Herman Melville",
+        "editora": "34",
+        "pagnum": 648,
+        "img": "https://i.imgur.com/4je7XVL.jpg"
+      },
+      {
+        "id": 12,
+        "titulo": "Os irmãos Karamázov",
+        "autor": "Fiódor Dostoiévski",
+        "editora": "34",
+        "pagnum": 888,
+        "img": "https://i.imgur.com/bNakCDN.jpg"
+      },
+      {
+        "id": 13,
+        "titulo": "O homem do castelo alto",
+        "autor": "Philip K. Dick",
+        "editora": "Aleph",
+        "pagnum": 312,
+        "img": "https://i.imgur.com/GdQJ6sJ.jpg"
+      },
+      {
+        "id": 14,
+        "titulo": "O retrato de Dorian Gray",
+        "autor": "Oscar Wilde",
+        "editora": "Biblioteca Azul",
+        "pagnum": 352,
+        "img": "https://i.imgur.com/fzuuYF1.jpg"
+      },
+      {
+        "id": 15,
+        "titulo": "Blues do fim dos tempos",
+        "autor": "Ian McEwan",
+        "editora": "Âyiné",
+        "pagnum": 65,
+        "img": "https://i.imgur.com/ehJgr8b.jpg"
+      },
+      {
+        "id": 16,
+        "titulo": "Tentativas de fazer algo da vida",
+        "autor": "Hendrik Groen",
+        "editora": "Tusquets",
+        "pagnum": 368,
+        "img": "https://i.imgur.com/ZhiQPQI.jpg"
+      },
+      {
+        "id": 17,
+        "titulo": "O amor nos tempos do cólera",
+        "autor": "Gabriel Garcia Márquez",
+        "editora": "Record",
+        "pagnum": 432,
+        "img": "https://i.imgur.com/0bDnrR5.jpg"
+      },
+      {
+        "id": 18,
+        "titulo": "Arquipélago Gulag",
+        "autor": "Aleksandr Soljenítsyn",
+        "editora": "Carambaia",
+        "pagnum": 704,
+        "img": "https://i.imgur.com/9gSW6aJ.jpg"
+      },
+      {
+        "id": 19,
+        "titulo": "Napoleão: uma vida",
+        "autor": "Vincent Cronin",
+        "editora": "Amarilys",
+        "pagnum": 488,
+        "img": "https://i.imgur.com/TiBT7kk.jpg"
+      },
+      {
+        "id": 20,
+        "titulo": "Noites do sertão",
+        "autor": "João Guimarães Rosa",
+        "editora": "Nova Fronteira",
+        "pagnum": 256,
+        "img": "https://i.imgur.com/OrTrpd4.jpg"
+      },
+      {
+        "id": 21,
+        "titulo": "A metamorfose",
+        "autor": "Franz Kafka",
+        "editora": "Antofágica",
+        "pagnum": 240,
+        "img": "https://i.imgur.com/Oyyv4RG.jpg"
+      },
+      {
+        "id": 22,
+        "titulo": "Dom Casmurro",
+        "autor": "Machado de Assis",
+        "editora": "Penguin",
+        "pagnum": 400,
+        "img": "https://i.imgur.com/BkoAIFW.jpg"
+      },
+      {
+        "id": 23,
+        "titulo": "O estrangeiro",
+        "autor": "Albert Camus",
+        "editora": "Record",
+        "pagnum": 128,
+        "img": "https://i.imgur.com/0Adl68n.jpg"
+      },
+      {
+        "id": 24,
+        "titulo": "Vidas secas",
+        "autor": "Graciliano Ramos",
+        "editora": "Record",
+        "pagnum": 176,
+        "img": "https://i.imgur.com/MOwKmhf.jpg"
+      },
+      {
+        "id": 25,
+        "titulo": "A náusea",
+        "autor": "Jean-Paul Sartre",
+        "editora": "Nova Fronteira",
+        "pagnum": 204,
+        "img": "https://i.imgur.com/RA3S9Dr.jpg"
+      },
+      {
+        "id": 26,
+        "titulo": "Mil tsurus",
+        "autor": "Yasunari Kawabata",
+        "editora": "Estação Liberdade",
+        "pagnum": 176,
+        "img": "https://i.imgur.com/yYzrrjq.jpg"
+      },
+      {
+        "id": 27,
+        "titulo": "A festa do bode",
+        "autor": "Mario Vargas Llosa",
+        "editora": "Alfaguara",
+        "pagnum": 456,
+        "img": "https://i.imgur.com/ZLbAvH6.jpg"
+      },
+      {
+        "id": 28,
+        "titulo": "Big Tech",
+        "autor": "Evgeny Morozov",
+        "editora": "Ubu",
+        "pagnum": 192,
+        "img": "https://i.imgur.com/7e2Bkl6.jpg"
+      },
+      {
+        "id": 29,
+        "titulo": "Nós",
+        "autor": "Evgeni Zamiatin",
+        "editora": "Aleph",
+        "pagnum": 344,
+        "img": "https://i.imgur.com/yTAJiK4.jpg"
+      },
+      {
+        "id": 30,
+        "titulo": "Knulp",
+        "autor": "Hermann Hesse",
+        "editora": "Todavia",
+        "pagnum": 112,
+        "img": "https://i.imgur.com/fo35E0M.jpg"
+      },
+      {
+        "id": 31,
+        "titulo": "Crítica da razão pura",
+        "autor": "Immanuel Kant",
+        "editora": "Edipro",
+        "pagnum": 592,
+        "img": "https://i.imgur.com/JVHDUNs.jpg"
+      },
+      {
+        "id": 32,
+        "titulo": "Sapiens",
+        "autor": "Yuval Noah Harari",
+        "editora": "Companhia das Letras",
+        "pagnum": 472,
+        "img": "https://i.imgur.com/7j9t9iX.jpg"
+      },
+      {
+        "id": 33,
+        "titulo": "O túnel",
+        "autor": "Ernesto Sabato",
+        "editora": "Carambaia",
+        "pagnum": 160,
+        "img": "https://i.imgur.com/FfWqLwW.jpg"
+      },
+      {
+        "id": 34,
+        "titulo": "Para onde vão os guarda-chuvas",
+        "autor": "Afonso Cruz",
+        "editora": "Dublinense",
+        "pagnum": 544,
+        "img": "https://i.imgur.com/owHPDKQ.jpg"
+      },
+      {
+        "id": 35,
+        "titulo": "Literatura e sociedade",
+        "autor": "Antonio Candido",
+        "editora": "Todavia",
+        "pagnum": 232,
+        "img": "https://i.imgur.com/iFLru9V.jpg"
+      },
+      {
+        "id": 36,
+        "titulo": "Gabriela, cravo e canela",
+        "autor": "Jorge Amado",
+        "editora": "Companhia das Letras",
+        "pagnum": 424,
+        "img": "https://i.imgur.com/cllCBsU.jpg"
+      },
+      {
+        "id": 37,
+        "titulo": "Emma",
+        "autor": "Jane Austen",
+        "editora": "Antofágica",
+        "pagnum": 560,
+        "img": "https://i.imgur.com/dPLq5lX.jpg"
+      },
+      {
+        "id": 38,
+        "titulo": "Os vagabundos iluminados",
+        "autor": "Jack Kerouac",
+        "editora": "L&PM",
+        "pagnum": 240,
+        "img": "https://i.imgur.com/tqu0gbb.jpg"
+      },
+      {
+        "id": 39,
+        "titulo": "As aventuras de Tom Sawyer",
+        "autor": "Mark Twain",
+        "editora": "Zahar",
+        "pagnum": 280,
+        "img": "https://i.imgur.com/4SbSqPl.jpg"
+      },
+      {
+        "id": 40,
+        "titulo": "A mulher de branco",
+        "autor": "Wilkie Collins",
+        "editora": "Martin Claret",
+        "pagnum": 829,
+        "img": "https://i.imgur.com/anYoNq7.jpg"
+      },
+      {
+        "id": 41,
+        "titulo": "O curioso caso de Benjamin Button",
+        "autor": "F. Scott Fitzgerald",
+        "editora": "Antofágica",
+        "pagnum": 176,
+        "img": "https://i.imgur.com/xWphybj.jpg"
+      },
+      {
+        "id": 42,
+        "titulo": "A falta",
+        "autor": "Xico Sá",
+        "editora": "Tusquets",
+        "pagnum": 160,
+        "img": "https://i.imgur.com/o3Vqt2M.jpg"
+      },
+      {
+        "id": 43,
+        "titulo": "Sátántangó",
+        "autor": "László Krasznahorkai",
+        "editora": "Companhia das Letras",
+        "pagnum": 232,
+        "img": "https://i.imgur.com/wkFnX7k.jpg"
+      },
+      {
+        "id": 44,
+        "titulo": "Moksha",
+        "autor": "Aldous Huxley",
+        "editora": "Biblioteca Azul",
+        "pagnum": 484,
+        "img": "https://i.imgur.com/vv1NxtG.jpg"
+      },
+      {
+        "id": 45,
+        "titulo": "Sol dos Insones",
+        "autor": "Lord Byron",
+        "editora": "Zouk",
+        "pagnum": 158,
+        "img": "https://i.imgur.com/HjMRIP5.jpg"
+      },
+      {
+        "id": 46,
+        "titulo": "Carrie",
+        "autor": "Stephen King",
+        "editora": "Suma",
+        "pagnum": 208,
+        "img": "https://i.imgur.com/gRDusvf.jpg"
+      },
+      {
+        "id": 47,
+        "titulo": "Sono",
+        "autor": "Haruki Murakami",
+        "editora": "Alfaguara",
+        "pagnum": 118,
+        "img": "https://i.imgur.com/d0vGV4G.jpg"
+      },
+      {
+        "id": 48,
+        "titulo": "O demônio de Frankfurt",
+        "autor": "Ferréz",
+        "editora": "Comix Zone",
+        "pagnum": 144,
+        "img": "https://i.imgur.com/WIZwfpp.jpg"
+      },
+      {
+        "id": 49,
+        "titulo": "Riacho doce",
+        "autor": "José Lins do Rego",
+        "editora": "Global",
+        "pagnum": 320,
+        "img": "https://i.imgur.com/Ql2ZvyI.jpg"
+      },
+      {
+        "id": 50,
+        "titulo": "O homem que calculava",
+        "autor": "Malba Tahan",
+        "editora": "Record",
+        "pagnum": 484,
+        "img": "https://i.imgur.com/WeMJFBy.jpg"
+      },
+      {
+        "id": 51,
+        "titulo": "Sherlock Holmes",
+        "autor": "Arthur Conan Doyle",
+        "editora": "Zahar",
+        "pagnum": 484,
+        "img": "https://i.imgur.com/DcfPpZp.jpg"
+      },
+      {
+        "id": 52,
+        "titulo": "Grundrisse",
+        "autor": "Karl Marx",
+        "editora": "Boitempo",
+        "pagnum": 792,
+        "img": "https://i.imgur.com/4n2IJ04.jpg"
+      },
+      {
+        "id": 53,
+        "titulo": "Odes",
+        "autor": "Horácio",
+        "editora": "34",
+        "pagnum": 616,
+        "img": "https://i.imgur.com/S6LhM4P.jpg"
+      },
+      {
+        "id": 54,
+        "titulo": "Quatro peças",
+        "autor": "Anton Tchékhov",
+        "editora": "Penguin",
+        "pagnum": 368,
+        "img": "https://i.imgur.com/eigDRVx.jpg"
+      },
+      {
+        "id": 55,
+        "titulo": "As minas do Rei Salomão",
+        "autor": "Henry Rider Haggard",
+        "editora": "Todavia",
+        "pagnum": 320,
+        "img": "https://i.imgur.com/GfgLAGo.jpg"
+      },
+      {
+        "id": 56,
+        "titulo": "O conto da ilha desconhecida",
+        "autor": "José Saramago",
+        "editora": "Companhia das Letras",
+        "pagnum": 64,
+        "img": "https://i.imgur.com/S9HFP1A.jpg"
+      },
+      {
+        "id": 57,
+        "titulo": "Brejo das almas",
+        "autor": "Carlos Drummond de Andrade",
+        "editora": "Companhia das Letras",
+        "pagnum": 80,
+        "img": "https://i.imgur.com/UZwvhMs.jpg"
+      },
+      {
+        "id": 58,
+        "titulo": "Drácula",
+        "autor": "Bram Stoker",
+        "editora": "Antofágica",
+        "pagnum": 575,
+        "img": "https://i.imgur.com/ONojwse.jpg"
+      },
+      {
+        "id": 59,
+        "titulo": "Ulysses",
+        "autor": "James Joyce",
+        "editora": "Penguin",
+        "pagnum": 1112,
+        "img": "https://i.imgur.com/If5EHXn.jpg"
+      },
+      {
+        "id": 60,
+        "titulo": "Floradas na serra",
+        "autor": "Dinah Silveira de Queiroz",
+        "editora": "Instante",
+        "pagnum": 208,
+        "img": "https://i.imgur.com/7vLj2vT.jpg"
+      },
+      {
+        "id": 61,
+        "titulo": "Bula para uma vida inadequada",
+        "autor": "Yuri Al'Hanati",
+        "editora": "Dublinense",
+        "pagnum": 160,
+        "img": "https://i.imgur.com/DA6JHju.jpg"
+      },
+      {
+        "id": 62,
+        "titulo": "Metrópolis",
+        "autor": "Thea Von Harbou",
+        "editora": "Aleph",
+        "pagnum": 416,
+        "img": "https://i.imgur.com/Ru6U7ar.jpg"
+      },
+      {
+        "id": 63,
+        "titulo": "Golias",
+        "autor": "Tom Gauld",
+        "editora": "Todavia",
+        "pagnum": 96,
+        "img": "https://i.imgur.com/HKZgWTU.jpg"
+      },
+      {
+        "id": 64,
+        "titulo": "A hipotése humana",
+        "autor": "Alberto Mussa",
+        "editora": "Record",
+        "pagnum": 176,
+        "img": "https://i.imgur.com/12kF8rR.jpg"
+      },
+      {
+        "id": 65,
+        "titulo": "Uma breve história do tempo",
+        "autor": "Stephen Hawking",
+        "editora": "Intrínseca",
+        "pagnum": 256,
+        "img": "https://i.imgur.com/clIriqh.jpg"
+      },
+      {
+        "id": 66,
+        "titulo": "O mundo de Sofia",
+        "autor": "Jostein Gaarder",
+        "editora": "Seguinte",
+        "pagnum": 568,
+        "img": "https://i.imgur.com/wIQopel.jpg"
+      },
+      {
+        "id": 67,
+        "titulo": "Os inovadores",
+        "autor": "Walter Isaacson",
+        "editora": "Companhia das Letras",
+        "pagnum": 568,
+        "img": "https://i.imgur.com/XIqMo4i.jpg"
+      },
+      {
+        "id": 68,
+        "titulo": "David Copperfield",
+        "autor": "Charles Dickens",
+        "editora": "Penguin",
+        "pagnum": 1160,
+        "img": "https://i.imgur.com/Vu9M4CR.jpg"
+      },
+      {
+        "id": 69,
+        "titulo": "Auto da Compadecida",
+        "autor": "Ariano Suassuna",
+        "editora": "Nova Fronteira",
+        "pagnum": 208,
+        "img": "https://i.imgur.com/CR5lyi0.jpg"
+      },
+      {
+        "id": 70,
+        "titulo": "O homem invisível",
+        "autor": "Ralph Ellison",
+        "editora": "José Olympio",
+        "pagnum": 574,
+        "img": "https://i.imgur.com/QMcBOO9.jpg"
+      },
+      {
+        "id": 71,
+        "titulo": "Máquinas como eu",
+        "autor": "Ian McEwan",
+        "editora": "Companhia das Letras",
+        "pagnum": 304,
+        "img": "https://i.imgur.com/xqBX84Q.jpg"
+      },
+      {
+        "id": 72,
+        "titulo": "Deus no banco dos réus",
+        "autor": "C.S. Lewis",
+        "editora": "Thomas Nelson",
+        "pagnum": 416,
+        "img": "https://i.imgur.com/EiBshel.jpg"
+      },
+      {
+        "id": 73,
+        "titulo": "O banquete",
+        "autor": "Platão",
+        "editora": "34",
+        "pagnum": 256,
+        "img": "https://i.imgur.com/KkQdQKW.jpg"
+      },
+      {
+        "id": 74,
+        "titulo": "O bebê de Rosemary",
+        "autor": "Ira Levin",
+        "editora": "Darkside",
+        "pagnum": 240,
+        "img": "https://i.imgur.com/zvi6BQL.jpg"
+      },
+      {
+        "id": 75,
+        "titulo": "O nome da rosa",
+        "autor": "Umberto Eco",
+        "editora": "Record",
+        "pagnum": 592,
+        "img": "https://i.imgur.com/6qNELp9.jpg"
+      },
+      {
+        "id": 76,
+        "titulo": "Pálido ponto azul",
+        "autor": "Carl Sagan",
+        "editora": "Companhia das Letras",
+        "pagnum": 336,
+        "img": "https://i.imgur.com/gmQrhSv.jpg"
+      },
+      {
+        "id": 77,
+        "titulo": "Sociedade do cansaço",
+        "autor": "Byung-Chul Han",
+        "editora": "Vozes",
+        "pagnum": 136,
+        "img": "https://i.imgur.com/MjFMmHO.jpg"
+      },
+      {
+        "id": 78,
+        "titulo": "Cavalos de cronos",
+        "autor": "José Francisco Botelho",
+        "editora": "Zouk",
+        "pagnum": 192,
+        "img": "https://i.imgur.com/zzDoDxc.jpg"
+      },
+      {
+        "id": 79,
+        "titulo": "Stoner",
+        "autor": "John Williams",
+        "editora": "Rádio Londres",
+        "pagnum": 320,
+        "img": "https://i.imgur.com/0uKvmkT.jpg"
+      },
+      {
+        "id": 80,
+        "titulo": "O apocalipse dos trabalhadores",
+        "autor": "Valter Hugo Mãe",
+        "editora": "Biblioteca Azul",
+        "pagnum": 208,
+        "img": "https://i.imgur.com/sRrUv7R.jpg"
+      },
+      {
+        "id": 81,
+        "titulo": "O meu pé de laranja lima",
+        "autor": "José Mauro de Vasconcelos",
+        "editora": "Melhoramentos",
+        "pagnum": 232,
+        "img": "https://i.imgur.com/B64WvkK.jpg"
+      },
+      {
+        "id": 82,
+        "titulo": "Futebol ao sol e à sombra",
+        "autor": "Eduardo Galeano",
+        "editora": "L&PM",
+        "pagnum": 256,
+        "img": "https://i.imgur.com/xTHivTJ.jpg"
+      },
+      {
+        "id": 83,
+        "titulo": "O arco-íris da gravidade",
+        "autor": "Thomas Pynchon",
+        "editora": "Companhia das Letras",
+        "pagnum": 740,
+        "img": "https://i.imgur.com/R266P0K.jpg"
+      },
+      {
+        "id": 84,
+        "titulo": "Hamlet",
+        "autor": "William Shakespeare",
+        "editora": "Penguin",
+        "pagnum": 320,
+        "img": "https://i.imgur.com/4EG20xk.jpg"
+      },
+      {
+        "id": 85,
+        "titulo": "O iluminado",
+        "autor": "Stephen King",
+        "editora": "Suma",
+        "pagnum": 520,
+        "img": "https://i.imgur.com/YDzbbLu.jpg"
+      },
+      {
+        "id": 86,
+        "titulo": "Ensaio sobre a lucidez",
+        "autor": "José Saramago",
+        "editora": "Companhia das Letras",
+        "pagnum": 328,
+        "img": "https://i.imgur.com/ehiSECX.jpg"
+      },
+      {
+        "id": 87,
+        "titulo": "A insustentável leveza do ser",
+        "autor": "Milan Kundera",
+        "editora": "Companhia das Letras",
+        "pagnum": 344,
+        "img": "https://i.imgur.com/eQYh6Vn.jpg"
+      },
+      {
+        "id": 88,
+        "titulo": "Feliz ano velho",
+        "autor": "Marcelo Rubens Paiva",
+        "editora": "Alfaguara",
+        "pagnum": 272,
+        "img": "https://i.imgur.com/nObzx8G.jpg"
+      },
+      {
+        "id": 89,
+        "titulo": "Os mandarins",
+        "autor": "Simone de Beauvoir",
+        "editora": "Nova Fronteira",
+        "pagnum": 736,
+        "img": "https://i.imgur.com/etemiYi.jpg"
+      },
+      {
+        "id": 90,
+        "titulo": "O código Da Vinci",
+        "autor": "Dan Brown",
+        "editora": "Arqueiro",
+        "pagnum": 432,
+        "img": "https://i.imgur.com/sLjUG0X.jpg"
+      },
+      {
+        "id": 91,
+        "titulo": "A volta ao mundo em 80 dias",
+        "autor": "Jules Verne",
+        "editora": "Zahar",
+        "pagnum": 240,
+        "img": "https://i.imgur.com/n0idFAC.jpg"
+      },
+      {
+        "id": 92,
+        "titulo": "Eu, robô",
+        "autor": "Isaac Asimov",
+        "editora": "Aleph",
+        "pagnum": 320,
+        "img": "https://i.imgur.com/HHp2fog.jpg"
+      },
+      {
+        "id": 93,
+        "titulo": "Deus é jovem",
+        "autor": "Papa Francisco",
+        "editora": "Planeta",
+        "pagnum": 160,
+        "img": "https://i.imgur.com/q6uOH7h.jpg"
+      },
+      {
+        "id": 94,
+        "titulo": "Steve Jobs",
+        "autor": "Walter Isaacson",
+        "editora": "Companhia das Letras",
+        "pagnum": 624,
+        "img": "https://i.imgur.com/q5j9ZPV.jpg"
+      },
+      {
+        "id": 95,
+        "titulo": "Augustus",
+        "autor": "John Williams",
+        "editora": "Rádio Londres",
+        "pagnum": 384,
+        "img": "https://i.imgur.com/G3OTLyb.jpg"
+      },
+      {
+        "id": 96,
+        "titulo": "Os luminares",
+        "autor": "Eleanor Catton",
+        "editora": "Biblioteca Azul",
+        "pagnum": 888,
+        "img": "https://i.imgur.com/GS1mVVl.jpg"
+      },
+      {
+        "id": 97,
+        "titulo": "Hippie",
+        "autor": "Paulo Coelho",
+        "editora": "Paralela",
+        "pagnum": 288,
+        "img": "https://i.imgur.com/Qy3Xieo.jpg"
+      },
+      {
+        "id": 98,
+        "titulo": "O general em seu labirinto",
+        "autor": "Gabriel Garcia Márquez",
+        "editora": "Record",
+        "pagnum": 288,
+        "img": "https://i.imgur.com/leg3rW3.jpg"
+      },
+      {
+        "id": 99,
+        "titulo": "As brumas de Avalon",
+        "autor": "Marion Zimmer Bradley",
+        "editora": "Planeta",
+        "pagnum": 968,
+        "img": "https://i.imgur.com/iw3XyZF.jpg"
+      },
+      {
+        "id": 100,
+        "titulo": "O relojoeiro cego",
+        "autor": "Richard Dawkins",
+        "editora": "Companhia das Letras",
+        "pagnum": 496,
+        "img": "https://i.imgur.com/WwAZlJc.jpg"
+      }
+    ]
+  }  
