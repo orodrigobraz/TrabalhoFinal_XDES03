@@ -1,30 +1,32 @@
 import React from 'react';
 import FeedItens from './FeedItens';
-import useFetch from '../../Hooks/useFetch';
-import { PHOTOS_GET } from '../../Api';
 import Error from '../Helper/Error';
 import Loading from '../Helper/Loading';
 import styles from './FeedFotos.module.css';
+import livros from 'C:/Users/Unifei/Documents/Trabalho-Final-ProgramacaoWeb-main/back/db/livros.json'
 
-const FeedFotos = ({page, user, setModal, setInfinite}) => {
-    const {data, loading, error, request} = useFetch();
+const FeedFotos = ({setModal, userId}) => { 
+    const [data, setData] = React.useState(null);
+    const [loading, setLoading] = React.useState(false);
+    const [error, setError] = React.useState(null);
 
     React.useEffect(() => {
-        async function fetchFotos() {
-            const total = 3;
-            const {url, options} = PHOTOS_GET({page, total, user});
-            const {response, json} = await request(url, options);
-            if(response && response.ok && json.length < total) setInfinite(false)
+        try {
+            const livrosDoUsuario = livros.filter(livro => livro.userId === userId); 
+            setData(livrosDoUsuario);
+        } catch (error) {
+            setError('Erro ao buscar os livros');
+        } finally {
+            setLoading(false);
         }
-        fetchFotos();
-    }, [request, user, page, setInfinite]);
+    }, [userId]); 
 
     if(error) return <Error error={error} />;
     if(loading) return <Loading />;
     if(data) {
         return (
             <ul className={`${styles.feed} animeLeft`}>
-                {data.map(foto => <FeedItens key={foto.id} foto={foto} setModal={setModal} />)}
+                {data.map(livro => <FeedItens key={livro.id} livro={livro} setModal={setModal} />)}
             </ul>
         )
     }

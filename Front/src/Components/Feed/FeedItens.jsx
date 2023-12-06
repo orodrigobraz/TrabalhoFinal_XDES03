@@ -1,17 +1,20 @@
 import React from 'react';
 import styles from './FeedItens.module.css';
-import Image from '../Helper/Image';
 
-const FeedItens = ({foto, setModal}) => {
+const FeedItens = ({ livro, setModal }) => {
     function handleClick() {
-        setModal(foto);
+        setModal(livro);
     }
-
 
     return (
         <li className={styles.foto} onClick={handleClick}>
-            <Image src={foto.src} alt={foto.title} />
-            <span></span>
+            <img src={livro.img} alt={livro.titulo} />
+            <div>
+                <h2>{livro.titulo}</h2>
+                <p>{livro.autor}</p>
+                <p>{livro.editora}</p>
+                <p>{livro.pagnum} páginas</p>
+            </div>
         </li>
     )
 }

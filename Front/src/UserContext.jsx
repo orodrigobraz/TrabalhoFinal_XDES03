@@ -1,6 +1,6 @@
 import React from 'react';
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET } from './Api';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const UserContext = React.createContext()
 
@@ -31,13 +31,31 @@ export const UserContext = React.createContext()
         try {
             setError(null);
             setLoading(true);
-            const {url, options} = TOKEN_POST({username, password});
-            const tokenRes = await fetch(url, options);
-            if(!tokenRes.ok) throw new Error(`Error: ${tokenRes.statusText}`);
-            const {token} = await tokenRes.json();
-            window.localStorage.setItem('token', token);
-            await getUser(token);
-            navigate('/conta');
+            const response = await fetch('http://localhost:3000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    usuario: username,
+                    senha: password,
+                }),
+            });
+      
+            if (response.ok) {
+                const result = await response.json();
+                if (result.token) {
+                    window.localStorage.setItem('token', result.token);
+                    await getUser(result.token);
+                    setLogin(true);
+                    navigate('/conta');
+                } else {
+                    console.log('Token não encontrado na resposta.');
+                }
+            } else {
+                console.log('Credenciais inválidas!!');
+                setLogin(false);
+            }
         } catch (err) {
             setError(err.message);
             setLogin(false);
