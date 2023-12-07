@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "titulo": "Entendendo Algoritmos",
+    "autor": "Aditya Y. Bhargava",
+    "editora": "Novatec",
+    "pagnum": "264",
+    "img": "https://i.imgur.com/hKHkGdQ.jpg",
+    "userId": 1
+  },
+  {
+    "id": 2,
+    "titulo": "Crime e castigo",
+    "autor": "Fiódor Dostoiévski",
+    "editora": "34",
+    "pagnum": "592",
+    "img": "https://i.imgur.com/u0vRYwR.jpg",
+    "userId": 1
+  },
+  {
+    "id": 3,
+    "titulo": "1984",
+    "autor": "George Orwell",
+    "editora": "Companhia das Letras",
+    "pagnum": "416",
+    "img": "https://i.imgur.com/SISCUuy.jpg",
+    "userId": 1
+  },
+  {
+    "id": 4,
+    "titulo": "Maus",
+    "autor": "Art Spiegelman",
+    "editora": "Companhia das Letras",
+    "pagnum": "196",
+    "img": "https://i.imgur.com/93XMq18.jpg",
+    "userId": 2
+  },
+  {
+    "id": 5,
+    "titulo": "Livro do desassossego",
+    "autor": "Fernando Pessoa",
+    "editora": "Companhia das Letras",
+    "pagnum": "544",
+    "img": "https://i.imgur.com/sthsLVg.jpg",
+    "userId": 2
+  },
+  {
+    "id": 6,
+    "titulo": "A consciência de Zeno",
+    "autor": "Italo Svevo",
+    "editora": "L&PM",
+    "pagnum": "448",
+    "img": "https://i.imgur.com/PQTzgRQ.jpg",
+    "userId": 2
+  },
+  {
+    "id": 7,
+    "titulo": "Sobre os ossos dos mortos",
+    "autor": "Olga Tokarczuk",
+    "editora": "Todavia",
+    "pagnum": "256",
+    "img": "https://i.imgur.com/uFkggtL.jpg",
+    "userId": 3
+  },
+  {
+    "id": 8,
+    "titulo": "Viagem ao Volga",
+    "autor": "Aḥmad Ibn Faḍlān",
+    "editora": "Carambaia",
+    "pagnum": "168",
+    "img": "https://i.imgur.com/P2BFLvT.jpg",
+    "userId": 3
+  },
+  {
+    "id": 9,
+    "titulo": "Um Exu em Nova York",
+    "autor": "Cidinha da Silva",
+    "editora": "Pallas",
+    "pagnum": "80",
+    "img": "https://i.imgur.com/B3k7jiX.jpg",
+    "userId": 3
+  }
+]

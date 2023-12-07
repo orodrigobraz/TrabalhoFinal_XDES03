@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "usuario": "usuario1",
+    "email": "teste@unifei.edu",
+    "senha": "$2b$10$0cPJVl4Biriw7jIvz1jp6u3vrcCdCZ8GOfzNct69w7MvrU7CjPNLC"
+  },
+  {
+    "id": 2,
+    "usuario": "usuario2",
+    "email": "testee@unifei.edu",
+    "senha": "$2b$10$gcah.V/8/6TPIv40lY4QDer28w3.45P2LX/ePBRXsCP68OXTcr5YC"
+  },
+  {
+    "id": 3,
+    "usuario": "usuario3",
+    "email": "testeee@unifei.edu",
+    "senha": "$2b$10$tgYvbNF6bGS5ukUXI3wuMO3uimuI3u8pZ5VWf5Xn2kdlUZ1pzvQ.e"
+  }
+]
