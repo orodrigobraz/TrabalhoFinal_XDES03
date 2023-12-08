@@ -1,14 +1,16 @@
 require("dotenv").config();
+
 const express = require('express');
 const app = express();
 const fs = require('fs');
 const cors = require('cors');
+const multer = require('multer');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('./model/User');
 const Livro = require('./model/Livro');
-
+const upload = multer();
 app.use(express.json());
 app.use(cors());
 
@@ -82,7 +84,7 @@ app.post('/criar', async (req,res) => {
     res.send(`Tudo certo usuario criado com sucesso.`);
 });
 
-app.post('/postar',  async (req,res) => {
+app.post('/postar', upload.none(), async (req,res) => {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
 
@@ -100,7 +102,7 @@ app.post('/postar',  async (req,res) => {
         const livrosCadastrados = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));
 
         const livroExistente = livrosCadastrados.find(livro => livro.titulo === titulo && livro.userId === userId); 
-        if (!titulo || !autor || !editora || !pagnum || !img || !userId) {
+        if (!titulo || !autor || !editora || !pagnum || !img || !userId ) {
 
             return res.status(409).send(`Você deve preencher todos os campos..`);
         }
